@@ -1,12 +1,13 @@
 import axios from "axios";
 import Data from "@/lib/MOCK.json";
+import { NextResponse } from 'next/server';
 
-export function GET() {
-  const url2 = "https://inshorts.vercel.app/news/all?offset=0&limit=100";
+export async function GET() {
+  // const url2 = "https://inshorts.vercel.app/news/all?offset=0&limit=100";
 
   try {
     // const response = await axios.get(url2);
-    return Data; // Ensure you're returning the response body
+    return NextResponse.json(response.data); // Ensure you're returning the response body
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.error("Axios error response:", error.response?.data || "No response data");
@@ -15,6 +16,6 @@ export function GET() {
       console.error("Non-Axios error:", error);
     }
 
-    return Data; // Fallback to mock data
+    return NextResponse.json(Data); // Fallback to mock data
   }
 }
