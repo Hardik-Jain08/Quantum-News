@@ -1,9 +1,10 @@
 import axios from "axios";
 import Data from "@/lib/MOCK.json"
-export async function fetchNews() {
+export function fetchNews() {
   try {
-    const response = await axios.get("/api/news");
-    return response.data;
+    // const response = axios.get("/api/news");
+    //   return response.data;
+      return Data;
   } catch (error) {
       console.error("Failed to fetch news:", error);
       return Data;

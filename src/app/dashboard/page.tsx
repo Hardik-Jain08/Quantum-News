@@ -19,9 +19,9 @@ export default function DashboardPage() {
 
   // Fetch articles on component mount
   useEffect(() => {
-    async function loadArticles() {
+    function loadArticles() {
       try {
-        let data = await fetchNews(); // Fetch data from API
+        let data = fetchNews(); // Fetch data from API
         console.log(data);
         data = data.data.articles;
         // Ensure that data is an array before setting it

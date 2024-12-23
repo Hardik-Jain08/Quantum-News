@@ -12,6 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import data from "@/lib/MOCK.json"
 
 // Register components for charts
 ChartJS.register(
@@ -28,10 +29,10 @@ export default function AnalyticsPage() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    async function fetchArticles() {
-      const response = await fetch("/api/news");
-      const data = await response.json();
-      setArticles(data);
+    function fetchArticles() {
+      // const response = fetch("/api/news");
+      // const data = response.json();
+      setArticles(data.data.articles);
     }
     fetchArticles();
   }, []);

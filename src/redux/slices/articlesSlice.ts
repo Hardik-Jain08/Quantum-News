@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchNews } from "@/services/NewsService";
+import Data from "@/lib/MOCK.json";
 
 export const fetchArticles = createAsyncThunk("articles/fetchArticles", async () => {
   try {
-    let response = await fetchNews();
-    response = response.data.articles;
+    // let response = fetchNews();
+    let response = Data;
     if (response.status === "SUCCESS" && Array.isArray(response.data.articles)) {
       return response.data.articles.map((article) => ({
         id: article.hashId,
@@ -16,7 +17,7 @@ export const fetchArticles = createAsyncThunk("articles/fetchArticles", async ()
         imageUrl: article.imageUrl,
         categories: article.categoryNames,
         score: article.score,
-        createdAt: new Date(article.createdAt),
+        createdAt: new Date(article.createdAt).toISOString(),
       }));
     } else {
       throw new Error("Invalid API response format");

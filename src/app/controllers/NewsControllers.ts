@@ -1,7 +1,7 @@
 import { fetchNews } from "@/services/NewsService";
 import Data from "@/lib/MOCK.json";
 
-export async function getFilteredNews(filters: {
+export function getFilteredNews(filters: {
   author?: string;
   type?: string;
   startDate?: string;
