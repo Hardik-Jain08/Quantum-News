@@ -1,7 +1,7 @@
 import axios from "axios";
 import Data from "@/lib/MOCK.json";
 
-export function GET(req: Request) {
+export function GET() {
   const url2 = "https://inshorts.vercel.app/news/all?offset=0&limit=100";
 
   try {
