@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quantum News Dashboard
 
-## Getting Started
+**A futuristic, responsive dashboard for managing news articles, blogs, and payouts.**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **Overview**
+The Quantum News Dashboard is a modern web application built using the latest technologies to provide:
+- Advanced filtering and searching of news articles and blogs.
+- Admin functionality for managing payouts per article/blog.
+- Export capabilities for payout reports.
+- Seamless user authentication with role-based access.
+- An intuitive UI with dark and light mode toggle.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## **Features**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. **Filtering and Searching**
+- **Filters**:
+  - Filter articles by **Author**.
+  - Filter by **Date Range**.
+  - Filter by **Type** (e.g., News, Blogs).
+- **Global Search Bar**:
+  - Quickly search articles by keywords.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. **Admin Payout Management**
+- Admins can set a **payout rate** for articles and blogs.
+- Automatically calculate total payouts based on the number of articles and rates.
+- **Data Persistence**:
+  - Payout rates are stored in **localStorage** to retain data across sessions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![image](https://github.com/user-attachments/assets/ebfa5360-beca-4c98-b5f8-38497a7f7d07)
 
-## Deploy on Vercel
+### 3. **Export Functionality**
+- Export filtered articles and payout data as:
+  - **PDF** using `jsPDF`.
+  - **CSV** using `xlsx`.
+  - Option to integrate with **Google Sheets**.
+  
+![image](https://github.com/user-attachments/assets/d5b085a4-4175-43b0-9fc1-593c0c732239)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. **Dark Mode and Light Mode Toggle**
+- Easily switch between dark and light themes.
+- Theme preference is saved using `localStorage`.
+
+![image](https://github.com/user-attachments/assets/2155d9da-c1cb-405e-9053-af152a5a6af5)
+
+![image](https://github.com/user-attachments/assets/0542d9a5-ec91-4cc0-b32a-e4b63d22fc59)
+
+
+### 5. **Analytics Dashboard**
+- Visualize article performance and trends using:
+  - Charts and graphs.
+  - Metrics like total views, engagement rates, and top-performing categories.
+
+![{258798F0-01ED-4BA7-BEF8-CB9DB3A52DF2}](https://github.com/user-attachments/assets/4af2fff0-5f43-4294-9666-9eca141ee2ee)
+
+### 6. **User Authentication and Role Management**
+- Integrated with **Clerk** for seamless authentication.
+- Role-based access:
+  - Admins can access **Payouts** and **Analytics** pages.
+  - Regular users can only view articles and blogs.
+
+![image](https://github.com/user-attachments/assets/5e9f1640-2a0e-4472-adc5-1f4b0c1e9ef4)
+
+
+
+---
+
+## **Technologies Used**
+
+### **Frontend**
+- **Next.js** (App Router): Framework for building modern, scalable web apps.
+- **React**: UI library for building interactive user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+
+### **State Management**
+- **Redux Toolkit**: Simplified state management and logic.
+
+### **Authentication**
+- **Clerk**: For authentication, session management, and role-based access.
+
+### **Export Functionality**
+- **jsPDF**: For generating PDF reports.
+- **xlsx**: For generating CSV reports.
+
+### **Date Utilities**
+- **date-fns**: For date parsing and manipulation.
+
+---
